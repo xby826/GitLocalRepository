@@ -1,0 +1,9 @@
+/*******************xy Qt类库更新说明*************************************/
+
+2018年12月10号更新
+
+添加csv文件读写类
+
+类名：CsvFileReadWirte_xy
+
+对应文件：csvfilereadwirte_xy.h csvfilereadwirte_xy.cpp

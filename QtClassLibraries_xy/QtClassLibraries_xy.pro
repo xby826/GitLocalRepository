@@ -31,3 +31,15 @@ HEADERS  += mainform.h \
     csvfilereadwirte_xy.h
 
 FORMS    += mainform.ui
+
+DISTFILES += \
+    updatedInstructions/updatedInstructions.txt
+
+
+
+
+
+
+
+
+

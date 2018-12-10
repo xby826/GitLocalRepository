@@ -2,6 +2,7 @@
 #define CSVFILEREADWIRTE_XY_H
 
 /*
+ * 
  * Csv文件概述
  *
  * 逗号分隔值（Comma-Separated Values，CSV，有时也称为字符分隔值，因为分隔字符也可以不是逗号），其文件以纯文本形式存储表格数据（数字和文本）。
@@ -33,10 +34,63 @@
  */
 
 
+class QTextStream;
+class QFile;
+class CsvStreamPrivate_xy;
+
+#include <QString>
+#include <QScopedPointer>
+
+/*
+ * 说明：csv文件读写支持
+ *
+ * 作者：xy
+ *
+ * 日期：2018年12月10号
+*/
+
 class CsvFileReadWirte_xy
 {
 public:
-    CsvFileReadWirte_xy();
+    CsvFileReadWirte_xy(QTextStream *txt);
+    CsvFileReadWirte_xy(QFile *txt);
+    virtual ~CsvFileReadWirte_xy();
+    //转换为标识csv字符
+    static QString toCsvString(const QString &rawStr);
+    //把一行要用逗号分隔的字符串转换为一行标准csv字符串
+    static QString toCsvStringLine(const QStringList & sectionLine);
+    //解析一行csv字符
+    static QStringList analysisCsvLine(const QString &lineStr);
+
+    //重载运算符
+    CsvFileReadWirte_xy & operator << (const QString &str);
+    CsvFileReadWirte_xy & operator << (int d);
+    CsvFileReadWirte_xy & operator << (double d);
+    CsvFileReadWirte_xy & operator << (float d);
+
+    //另起一行
+    void newLine();
+    //获取输入输出流
+    QTextStream* stream() const;
+    //读取并解析一行csv字符串
+    QStringList readAndAnalysisCsvLine();
+    //判断是否到文件末端
+    bool atEnd() const;
+
+private:
+    static int advquoted(const QString &s,QString &fld,int i);
+    static int advplain(const QString &s,QString &fld,int i);
+
+private:
+    QScopedPointer<CsvStreamPrivate_xy> d_p;
 };
+
+typedef CsvFileReadWirte_xy & (*CsvFileReadWirteFunction_xy)(CsvFileReadWirte_xy &);
+inline CsvFileReadWirte_xy & operator << (CsvFileReadWirte_xy & s,CsvFileReadWirteFunction_xy f)
+{
+    return (*f)(s);
+}
+
+CsvFileReadWirte_xy &endl(CsvFileReadWirte_xy &s);
 
 #endif // CSVFILEREADWIRTE_XY_H
