@@ -6,6 +6,8 @@ MainForm::MainForm(QWidget *parent) :
     ui(new Ui::MainForm)
 {
     ui->setupUi(this);
+
+    m_textToSpeech_xy = new TextToSpeech_xy();
 }
 
 MainForm::~MainForm()
@@ -50,4 +52,14 @@ void MainForm::on_csvFileWriteBtn_clicked()
     csv << str3 << str2 << str1 << i << f << d << endl;
     file.close();
     ui->statusBar->showMessage("写入成功...");
+}
+//播放按钮槽函数   阻塞方式播放文字语音
+void MainForm::on_playBtn_clicked()
+{
+    m_textToSpeech_xy->play(ui->spackComboBox->currentText());
+}
+//文字下来框内容改变事件  线程方式播放文字语音，多语音时排队播放
+void MainForm::on_spackComboBox_currentTextChanged(const QString &arg1)
+{
+    m_textToSpeech_xy->playing(arg1);
 }

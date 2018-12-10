@@ -6,6 +6,10 @@
 
 QT       += core gui
 
+
+# qt5.7以上版本使用QAxObject类
+QT += axcontainer
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QtClassLibraries_xy
@@ -25,10 +29,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainform.cpp \
-    csvfilereadwirte_xy.cpp
+    csvfilereadwirte_xy.cpp \
+    texttospeech_xy.cpp
 
 HEADERS  += mainform.h \
-    csvfilereadwirte_xy.h
+    csvfilereadwirte_xy.h \
+    texttospeech_xy.h
 
 FORMS    += mainform.ui
 

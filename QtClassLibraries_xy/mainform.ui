@@ -17,6 +17,9 @@
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
         <string>Csv文件读写示例</string>
@@ -100,8 +103,157 @@
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>win下文字转为语音播放</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QComboBox" name="spackComboBox">
+              <property name="maximumSize">
+               <size>
+                <width>500</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <item>
+               <property name="text">
+                <string>扁但是扁的，板凳是板的。扁担不是板凳，板凳不是扁担。别把扁担说成板凳，别把板凳说成扁担。</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>打南边来了个哑巴,腰里别了个喇叭; 
+打北边来了个喇嘛,手里提了个獭犸. 
+提着獭犸的喇嘛要拿獭犸换别着喇叭的哑巴的喇叭; 
+别着喇叭的哑巴不愿拿喇叭换提着獭犸的喇嘛的獭犸. 
+不知是别着喇叭的哑巴打了提着獭犸的喇嘛一喇叭; 
+还是提着獭犸的喇嘛打了别着喇叭的哑巴一獭犸. 
+喇嘛回家炖獭犸; 
+哑巴嘀嘀哒哒吹喇叭 </string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>这是小黑小黑</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>你这人是不是有问题？</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>are you ok？</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>你是我的小呀小苹果，怎么爱你都不嫌多，你好吗？今天天气真的不错哎，对不对？从南边来了个喇嘛，手里提溜2斤塔玛</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>新建项目</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>新建项目</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>新建项目</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>新建项目</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="playBtn">
+              <property name="text">
+               <string>播放</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
